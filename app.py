@@ -1,6 +1,5 @@
 !pip install seaborn
 
-
 import streamlit as st
 import seaborn as sns
 import pandas as pd
@@ -25,7 +24,7 @@ def create_bar_chart(selected_data, x_feature, y_feature):
     sns.barplot(x=x_feature, y=y_feature, data=selected_data)
     plt.xticks(rotation=45)  # X ekseni etiketlerini 45 derece döndürme
     plt.tight_layout()
-    st.pyplot()  # Streamlit için plt.show() yerine st.pyplot() kullanılır
+    st.pyplot(plt.gcf())  # Mevcut figürü göster
 
 # Save düğmesi (CSV dosyası için)
 csv_name = st.text_input('Enter CSV file name', 'selected_data')
