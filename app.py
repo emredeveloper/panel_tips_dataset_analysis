@@ -1,5 +1,9 @@
-!pip install seaborn
+# Gerekli kütüphaneleri yükleyin
+!pip install streamlit
 
+# Streamlit uygulamasını içeren bir Python dosyası oluşturun, örneğin, "app.py"
+with open('app.py', 'w') as f:
+    f.write("""
 import streamlit as st
 import seaborn as sns
 import pandas as pd
@@ -52,3 +56,7 @@ if not selected_data.empty:
     create_bar_chart(selected_data, x_feature, y_feature)
 else:
     st.warning("No data available for the selected filters.")
+""")
+
+# Streamlit uygulamasını başlatın
+!streamlit run app.py
